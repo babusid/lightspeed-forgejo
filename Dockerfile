@@ -33,6 +33,12 @@ RUN apk --no-cache add build-base git nodejs npm
 COPY . ${GOPATH}/src/forgejo.org
 WORKDIR ${GOPATH}/src/forgejo.org
 
+# 1. Declare the variable so Docker picks it up from Railway
+ARG FORGEJO_VERSION
+
+# 2. Write it to the VERSION file the Makefile is looking for
+RUN echo "${FORGEJO_VERSION}" > VERSION
+
 RUN make clean-no-bindata
 RUN make frontend
 RUN go build contrib/environment-to-ini/environment-to-ini.go && xx-verify environment-to-ini
