@@ -95,7 +95,8 @@ RUN addgroup \
 ENV USER=git
 ENV GITEA_CUSTOM=/data/gitea
 
-VOLUME ["/data"]
+# VOLUME ["/data"]  # Removed for Railway compatibility
+# Railway manages volumes externally
 
 ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/usr/bin/s6-svscan", "/etc/s6"]
