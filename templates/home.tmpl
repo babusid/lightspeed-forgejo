@@ -7,6 +7,17 @@
 				{{AppDisplayName}}
 			</h1>
 		</div>
+		<div class="tw-flex tw-gap-4 tw-mt-8">
+			<a href="{{AppSubUrl}}/explore/repos" class="ui button tw-rounded-full tw-px-6 tw-py-2.5">
+				{{ctx.Locale.Tr "explore"}}
+			</a>
+			<a href="{{AppSubUrl}}/help" class="ui button tw-rounded-full tw-px-6 tw-py-2.5">
+				{{ctx.Locale.Tr "help"}}
+			</a>
+			<a href="{{AppSubUrl}}/user/login" class="ui primary button tw-rounded-full tw-px-6 tw-py-2.5">
+				{{ctx.Locale.Tr "sign_in"}}
+			</a>
+		</div>
 	</div>
 </div>
 {{template "base/footer" .}}
